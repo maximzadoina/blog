@@ -9,7 +9,7 @@ function Home({ menu }: HomeProps): JSX.Element {
   const [rating, setRating] = useState<number>(4);
   return (
     <>
-      <Rating setRating={setRating} isEditable rating={rating} />
+    
       <Button appearance="primary">ok</Button>
       <ul>
         {menu.map((m) => (
