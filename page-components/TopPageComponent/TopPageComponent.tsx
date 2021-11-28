@@ -2,8 +2,9 @@ import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 import cn from 'classnames';
 import React from 'react';
-import { Card, Htag, Tag } from '../../components';
+import { Advantages, Card, Htag, Tag } from '../../components';
 import { HhData } from '../../components/HhData/HhData';
+import { TopLevelCategory } from '../../interfaces/page.interface';
 
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
   return (
@@ -26,7 +27,13 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
           </Tag>
         )}
       </div>
-      <HhData {...page.hh} />
+      {firstCategory == TopLevelCategory.Courses && page.hh && <HhData {...page.hh} />}
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <Htag tag="h2">Advantages</Htag>
+          <Advantages advantages={page.advantages} />
+        </>
+      )}
     </div>
   );
 };
