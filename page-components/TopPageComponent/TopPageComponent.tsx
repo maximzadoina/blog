@@ -20,7 +20,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
       </div>
       <div>{products && products.map((p) => <div key={p._id}>{p.title}</div>)}</div>
       <div className={styles.hhTitle}>
-        <Htag tag="h2">Vacancies - {page.category}</Htag>
+        <Htag tag="h2">Positions - {page.category}</Htag>
         {products && (
           <Tag color="red" size="m">
             hh.ru
@@ -34,7 +34,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
           <Advantages advantages={page.advantages} />
         </>
       )}
-      {page.seoText && <P>{page.seoText}</P>}
+      {page.seoText && <div dangerouslySetInnerHTML={{ __html: page.seoText }} className={styles.seo} />}
       <Htag tag="h2">Earned skills</Htag>
       {page.tags.map((tag) => (
         <Tag key={tag} color="primary">
