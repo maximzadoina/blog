@@ -2,7 +2,7 @@ import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 import cn from 'classnames';
 import React from 'react';
-import { Advantages, Card, Htag, Tag } from '../../components';
+import { Advantages, Card, Htag, P, Tag } from '../../components';
 import { HhData } from '../../components/HhData/HhData';
 import { TopLevelCategory } from '../../interfaces/page.interface';
 
@@ -34,6 +34,13 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
           <Advantages advantages={page.advantages} />
         </>
       )}
+      {page.seoText && <P>{page.seoText}</P>}
+      <Htag tag="h2">Earned skills</Htag>
+      {page.tags.map((tag) => (
+        <Tag key={tag} color="primary">
+          {tag}
+        </Tag>
+      ))}
     </div>
   );
 };
