@@ -3,9 +3,14 @@ import React from 'react';
 import { withLayout } from '../layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
+import { Input } from '../components';
 
 function Home({ menu }: HomeProps): JSX.Element {
-  return <></>;
+  return (
+    <>
+      <Input placeholder="test" />
+    </>
+  );
 }
 
 export default withLayout(Home);

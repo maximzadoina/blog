@@ -7,3 +7,4 @@ export * from '../layout/Menu/Menu';
 export * from './Card/Card';
 export * from './Advantages/Advantages';
 export * from './Sort/Sort';
+export * from './Input/Input';
